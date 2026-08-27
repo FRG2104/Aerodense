@@ -6,7 +6,7 @@ set -e
 cd "$(dirname "$0")"
 
 USUARIO="${1:-FRG2104}"
-REPO="aerodense-web"
+REPO="Aerodense"
 
 echo "=> Conectando al repo de $USUARIO/$REPO ..."
 git remote remove origin 2>/dev/null || true
