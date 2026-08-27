@@ -86,8 +86,9 @@
 /* CTA FINAL */
 .final{background:linear-gradient(to bottom, #101714 0%, rgba(16,23,20,0) 170px), linear-gradient(160deg,#0e1311,#16201b);text-align:center;position:relative;overflow:hidden}
 .final.crossfade-top::before{display:none}
-.final::before{content:"";position:absolute;left:50%;top:-30%;transform:translateX(-50%);width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(255,176,0,.18),transparent 70%);z-index:0;animation:sunBreathe 7s ease-in-out infinite}
-@keyframes sunBreathe{0%,100%{opacity:.82;transform:translateX(-50%) scale(1)}50%{opacity:1;transform:translateX(-50%) scale(1.07)}}
+/* Glow ámbar de fondo en ::after (separado del ::before del crossfade para no ser apagado) */
+.final::after{content:"";position:absolute;left:50%;top:-20%;transform:translateX(-50%);width:680px;height:680px;border-radius:50%;background:radial-gradient(circle,rgba(255,176,0,.22),transparent 68%);z-index:0;animation:sunBreathe 7s ease-in-out infinite;pointer-events:none}
+@keyframes sunBreathe{0%,100%{opacity:.85;transform:translateX(-50%) scale(1)}50%{opacity:1;transform:translateX(-50%) scale(1.08)}}
 .final .wrap{position:relative;z-index:1;max-width:720px}
 .final h2{font-size:clamp(2rem,4.6vw,3rem);font-weight:800;margin-bottom:14px}
 .final p{color:var(--muted);font-size:1.1rem;margin-bottom:30px}
