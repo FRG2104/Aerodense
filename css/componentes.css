@@ -1,0 +1,24 @@
+/* BOTONES */
+.btn{display:inline-flex;align-items:center;gap:9px;font-family:var(--font-body);font-weight:700;font-size:1rem;
+  padding:15px 26px;border-radius:100px;transition:transform .15s ease,background .15s ease;cursor:pointer;border:0;position:relative;overflow:hidden}
+.btn::before{content:"";position:absolute;top:0;left:-130%;width:55%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.38),transparent);transform:skewX(-18deg);transition:left .6s var(--ease-out);pointer-events:none}
+.btn:hover::before{left:135%}
+/* capa interior para el efecto magnético (no compite con la entrada) */
+.btn-mag{display:inline-flex;align-items:center;gap:9px;pointer-events:none;will-change:transform}
+/* Entrada de los botones del cierre: CSS puro, no toca el transform del botón (lo deja libre para el magnético) */
+.final .row .btn{opacity:0;transform:translateY(26px) scale(.9);transition:opacity .55s var(--ease-out),transform .55s var(--ease-back)}
+.final .row .btn.in-final{opacity:1;transform:none}
+.final .row .btn:nth-child(2).in-final{transition-delay:.12s}
+.btn:active{transform:translateY(1px)}
+.btn-wa{background:#1f9d54;color:#fff}
+.btn-wa:hover{background:#1a8a49}
+.btn-sol{background:var(--sun);color:#1a1300}
+.btn-sol:hover{background:#ffc233}
+.btn-ghost{background:transparent;color:var(--cream);border:1.5px solid var(--line)}
+.btn-ghost:hover{border-color:var(--sun)}
+
+/* FAB (WhatsApp flotante) */
+.fab{position:fixed;right:16px;bottom:16px;z-index:70;display:flex;align-items:center;gap:8px;background:#1f9d54;color:#fff;font-weight:700;padding:13px 18px;border-radius:100px;box-shadow:0 10px 26px -6px rgba(31,157,84,.7);font-size:.95rem;animation:pulse 2.6s ease-in-out infinite}
+.fab:active{transform:scale(.97)}
+@media(prefers-reduced-motion:no-preference){ .fab{animation:pulse 2.6s ease-in-out infinite, floaty 4.5s ease-in-out infinite} @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}} }
+@media(min-width:560px){.fab{padding:14px 22px;font-size:1rem}}

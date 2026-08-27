@@ -1,0 +1,18 @@
+/* MOTION — identidad Energetic Premium (solar) */
+.scroll-progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--sun);z-index:70;box-shadow:0 0 10px rgba(255,176,0,.7)}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity var(--dur-3) var(--ease-out),transform var(--dur-3) var(--ease-out);transition-delay:calc(var(--d,0)*80ms);will-change:opacity,transform}
+.reveal.in{opacity:1;transform:none}
+.reveal--left{transform:translateX(-36px)}
+.reveal--right{transform:translateX(36px)}
+.reveal--scale{transform:scale(.92)}
+.reveal.in.reveal--left,.reveal.in.reveal--right,.reveal.in.reveal--scale{transform:none}
+.reveal-mask{clip-path:inset(0 0 100% 0);opacity:0;transform:translateY(16px);transition:clip-path var(--dur-3) var(--ease-out),opacity var(--dur-3) var(--ease-out),transform var(--dur-3) var(--ease-out);transition-delay:calc(var(--d,0)*60ms)}
+.reveal-mask.in{clip-path:inset(0 0 0 0);opacity:1;transform:none}
+/* Subrayado solar que se dibuja al entrar a la sección */
+.h-line{display:block;height:3px;width:64px;margin-top:16px;border-radius:3px;background:linear-gradient(90deg,var(--sun),var(--sun-deep));transform:scaleX(0);transform-origin:left center}
+.h-line.center{margin-left:auto;margin-right:auto;transform-origin:center}
+.hero .eyebrow,.hero h1,.hero p.lead,.hero .cta,.hero .cue{opacity:0;transform:translateY(22px);animation:rise .9s cubic-bezier(.2,.7,.2,1) forwards}
+.hero h1{animation-delay:.08s}.hero p.lead{animation-delay:.16s}.hero .cta{animation-delay:.26s}.hero .cue{animation-delay:.5s}
+@keyframes rise{to{opacity:1;transform:none}}
+.fab{animation:pulse 2.6s ease-in-out infinite}
+@keyframes pulse{0%,100%{box-shadow:0 10px 26px -6px rgba(31,157,84,.7)}50%{box-shadow:0 10px 34px -4px rgba(31,157,84,.95)}}
