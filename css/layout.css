@@ -64,16 +64,21 @@
 .svc-item p{color:var(--muted);font-size:1.02rem;max-width:44ch}
 
 /* GALERÍA */
-.gal{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-@media(min-width:760px){.gal{grid-template-columns:repeat(6,1fr);grid-auto-rows:210px;gap:14px}}
+/* Móvil: 2 columnas iguales, sin spans que desborden el grid */
+.gal{display:grid;grid-template-columns:repeat(2,1fr);grid-auto-rows:140px;gap:10px}
 .gal figure{position:relative;border-radius:12px;overflow:hidden;box-shadow:var(--shadow);background:var(--panel);will-change:transform}
 .gal img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
 .gal figure:hover img{transform:scale(1.06)}
 .gal figcaption{position:absolute;left:0;right:0;bottom:0;padding:14px 16px;font-size:.85rem;font-weight:600;color:#fff;background:linear-gradient(transparent,rgba(14,19,17,.9))}
-.a1{grid-column:span 2;grid-row:span 2}
-.a2{grid-column:span 2}.a3{grid-column:span 2}
-.a4{grid-column:span 3}.a5{grid-column:span 3}
-@media(min-width:760px){.a1{grid-column:span 3;grid-row:span 2}.a2{grid-column:span 3}.a3{grid-column:span 2}.a4{grid-column:span 2}.a5{grid-column:span 2}}
+/* Escritorio: mosaico de 6 columnas con tamaños variables */
+@media(min-width:760px){
+  .gal{grid-template-columns:repeat(6,1fr);grid-auto-rows:210px;gap:14px}
+  .a1{grid-column:span 3;grid-row:span 2}
+  .a2{grid-column:span 3}
+  .a3{grid-column:span 2}
+  .a4{grid-column:span 2}
+  .a5{grid-column:span 2}
+}
 
 /* PROCESO */
 .steps{display:grid;gap:18px;grid-template-columns:1fr;margin-top:44px}
